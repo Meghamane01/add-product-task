@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of ProductList">
+      <div class="card mr-4" style="width: 15rem;">
+        <img [src]="item.imgData" class="card-img-top " alt="...">
+        <div class="card-body mx-auto">
+          <h5 class="card-title">{{item.name}}</h5>
+          <h2>{{item.rupees}}</h2>
+
+          <div class="btn-group " role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-light btn-outline-secondary " (click)="changeOrderNumber('minus',item)"><i
+                class="fa fa-solid fa-minus"></i></button>
+            <button type="button" class="btn btn-light btn-outline-secondary px-4">{{item.qty}}</button>
+        
+            <button type="button" class="btn btn-light btn-outline-secondary" (click)=" changeOrderNumber('plus',item)"><i
+                class="fa fa-solid fa-plus"></i></button>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-primary mt-2 ml-3" (click)="addToBag(item)">Add To Bag</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <h1>My Shopping Bag</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price Details</th>
+          <th scope="col">Order Total</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of ItemList; let i = index">
+          <td>{{data.name}}</td>
+          <td>{{data.qty}}</td>
+          <td>{{data.rupees}}</td>
+          <td>{{data.rOrder}}</td>
+          <td>{{data.rAction}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

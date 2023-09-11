@@ -1,0 +1,21 @@
+.card-img-top{
+    height: 150px;
+   
+}
+
+h5{
+    font-size: 25px;
+}
+h2{
+    font-size: 20px;
+    color:blueviolet;
+}
+
+.list-group{
+    display: flex;
+   justify-content: center;
+}
+
+h1{
+    font-size: 25px;
+}
